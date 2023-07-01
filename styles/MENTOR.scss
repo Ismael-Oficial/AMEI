@@ -1,0 +1,139 @@
+$primary-color: #FF8F2C;
+$secondary-color: #1F2226;
+$tertiary-color: #474F59;
+$alternative-color: #F27405;
+$shadow-color: #232323;
+$default-color: #FFFFFF;
+
+@mixin FlexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    float: left;
+
+    .logo {
+        @include FlexCenter();
+        color: $primary-color;
+        font-size: 80px;
+        height: 25vh;
+
+        img{
+            width: 70%;
+        }
+    }
+
+    .search {
+        @include FlexCenter();
+
+        input {
+            width: 90%;
+            height: 3rem;
+            border-radius: 8px;
+            border: none;
+            background: $tertiary-color;
+            outline: none;
+            color: $default-color;
+            padding: 1rem;
+            font-size: 24px;
+        }
+
+        input::placeholder {
+            color: $default-color;
+            opacity: 0.4;
+        }
+    }
+
+    .nav {
+        @include FlexCenter();
+        align-items: start;
+        flex-direction: column;
+
+        a {
+            width: 90%;
+            text-decoration: none;
+            color: $primary-color;
+            font-size: 25px;
+            margin: 0.5rem;
+            padding: 0.5rem;
+
+            &:hover {
+                background: $primary-color;
+                color: $secondary-color;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    .perfil {
+        @include FlexCenter();
+        justify-content: space-around;
+        margin: 1rem;
+        width: 90%;
+        height: 80px;
+        border-radius: 8px;
+        background: $secondary-color;
+        cursor: pointer;
+
+        &:hover {
+            background: $tertiary-color;
+        }
+
+        img {
+            width: 20%;
+            border-radius: 50%;
+        }
+
+        img:nth-child(3) {
+            width: 13%;
+            border-radius: 50%;
+        }
+
+        p {
+            color: $default-color;
+            font-size: 25px;
+        }
+    }
+}
+
+
+#logout {
+    display: none;
+    position: absolute;
+    bottom: 150px;
+    left: 15.5px;
+    width: 260px;
+    height: 60px;
+    background: $secondary-color;
+    cursor: pointer;
+
+    a {
+        background: $secondary-color;
+        @include FlexCenter();
+        color: $default-color;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 18px;
+        height: 60px;
+
+        &:hover {
+            background: $tertiary-color;
+            border-radius: 5px;
+        }
+    }
+}

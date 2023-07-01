@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Gestão Financeira | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="../styles/MEI.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="nav">
+                <a href="../MEI/ferramentas.html">Ferramentas</a>
+                <a href="../MEI/treinamentos.html">Treinamentos</a>
+                <a href="#" onclick="Alerta()">Mentorias</a>
+                <a href="#" onclick="Alerta()">Eventos</a>
+                <a href="#" onclick="Alerta()">Notificações</a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../imgs/perfil.jpeg" alt="Imagem de Usuario">
+                <p>Iago Souza</p>
+                <img src="../imgs/question.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div class="title">
+            <h2>Curso de Gestão Financeira</h2>
+        </div>
+    </article>
+
+    <section>
+        <div id="video-player"></div>
+        <div class="video-playlist" id="playlist">
+            <button class="video-link" data-video="https://www.youtube.com/embed/PW4yrmHNJAU">Video 1 - Introdução do
+                curso</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/UbAINENoixI">Video 2 - Como sair da
+                NEGAÇÃO!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/4IHul4ziqvI">Video 3 - Gaste 100% do
+                dinheiro antes de recebê-lo</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/_mqiko37-m0">Video 4 - Organize suas
+                dívidas!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/zGX7-69PJwQ">Video 5 - Reserva de
+                Emergência!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/_eYP1AZ_zgY">Video 6 - Ter casa própria
+                ou morar de aluguel?</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/8Z0kfFUwqHs">Video 7 - Coloque o
+                Dinheiro Para trabalhar pra você!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/KKWlVlAxO9U">Video 8 - Investimento em
+                Fundo Imobiliário</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/2At4z9u40wM">Video 9 - Dúvidas sobre
+                Educação Financeira?</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/X7AtOA3s19s">Video 10 - Bolsa de
+                Valores - Como investir (Parte 1)</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/AMvFZvYLFEE">Video 11 - Bolsa de
+                Valores - Como investir (Parte 2)</button>
+        </div>
+    </section>
+
+    <div id="logout">
+        <a href="../MEI/perfil.html">Perfil</a>
+        <a href="../index.html">Log Out</a>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var videoPlayer = document.getElementById('video-player');
+            var playlist = document.getElementById('playlist');
+            var videoLinks = playlist.getElementsByClassName('video-link');
+
+            // Carregar automaticamente o vídeo 1
+            var videoSource = videoLinks[0].getAttribute('data-video');
+            videoPlayer.innerHTML = '<iframe width="720" height="405" src="' + videoSource + '" frameborder="0" allowfullscreen></iframe>';
+
+            // Adicionar evento de clique aos links dos vídeos
+            for (var i = 0; i < videoLinks.length; i++) {
+                videoLinks[i].addEventListener('click', function () {
+                    var videoSource = this.getAttribute('data-video');
+                    videoPlayer.innerHTML = '<iframe width="720" height="405" src="' + videoSource + '" frameborder="0" allowfullscreen></iframe>';
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

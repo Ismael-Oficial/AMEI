@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-register">
+        <form>
+            <h2>Cadastro</h2>
+            <input type="text" placeholder="Usuário">
+            <input type="password" placeholder="Digite uma Senha">
+            <input type="password" placeholder="Confirmar Senha">
+            <div class="option">
+                <input type="radio" name="option" value="mei">
+                <label>Sou MEI</label>
+                <input type="radio" name="option" value="Colaborador">
+                <label>Sou Colaborador</label>
+            </div>
+            <input type="button" value="Cadastrar" id="BtnRegister" onclick="ClickRegister()">
+        </form>
+    </div>
+
+    <script>
+        function ClickRegister(){
+            var BtnRegister = document.getElementById('BtnRegister');
+            alert("Novo usuário cadastrado com sucesso!")
+            BtnRegister = location.href = "login.html"
+        }
+    </script>
+</body>
+
+</html>

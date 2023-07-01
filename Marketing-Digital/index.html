@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Marketing Digital | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="../styles/MEI.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="nav">
+                <a href="../MEI/ferramentas.html">Ferramentas</a>
+                <a href="../MEI/treinamentos.html">Treinamentos</a>
+                <a href="#" onclick="Alerta()">Mentorias</a>
+                <a href="#" onclick="Alerta()">Eventos</a>
+                <a href="#" onclick="Alerta()">Notificações</a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../imgs/perfil.jpeg" alt="Imagem de Usuario">
+                <p>Iago Souza</p>
+                <img src="../imgs/question.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div class="title">
+            <h2>Curso de Marketing Digital</h2>
+        </div>
+    </article>
+
+    <section>
+        <div id="video-player"></div>
+        <div class="video-playlist" id="playlist">
+            <button class="video-link" data-video="https://www.youtube.com/embed/MQDUUodMfCQ">Video 1 - Guia COMPLETO para Começar do Zero</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/cDCP6kz5Hbk">Video 2 - Como ter 300 cliques por dia no seu link de afiliado</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/Tr3fce4UmX4">Video 3 - Estruturas de Venda Completas para Afiliados!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/9u2TSaflF9o">Video 4 - Como achar os Melhores Produtos na Hotmart fora dos 150 graus!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/NUf69GbuU5M">Video 5 - Como ganhar Dinheiro de Verdade como Afiliado?</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/wuCiX5yVL0Q">Video 6 - 3 Páginas que me gera R$ 10 mil por mês na Hotmart</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/UErreLKl_Dw">Video 7 - Como começar do zero na Hotmart SEM comprar curso</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/aYYrkR6ygBg">Video 8 - Como divulgar o link de afiliado: 4 Melhores Formas!</button>
+            <button class="video-link" data-video="https://www.youtube.com/embed/x-BlkxiEnHQ">Video 9 - Como criar um Curso Online DO ZERO e vender MUITO na Internet</button>
+        </div>
+    </section>
+
+    <div id="logout">
+        <a href="../MEI/perfil.html">Perfil</a>
+        <a href="../index.html">Log Out</a>
+    </div>
+
+    <script src="../script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var videoPlayer = document.getElementById('video-player');
+            var playlist = document.getElementById('playlist');
+            var videoLinks = playlist.getElementsByClassName('video-link');
+
+            // Carregar automaticamente o vídeo 1
+            var videoSource = videoLinks[0].getAttribute('data-video');
+            videoPlayer.innerHTML = '<iframe width="720" height="405" src="' + videoSource + '" frameborder="0" allowfullscreen></iframe>';
+
+            // Adicionar evento de clique aos links dos vídeos
+            for (var i = 0; i < videoLinks.length; i++) {
+                videoLinks[i].addEventListener('click', function () {
+                    var videoSource = this.getAttribute('data-video');
+                    videoPlayer.innerHTML = '<iframe width="720" height="405" src="' + videoSource + '" frameborder="0" allowfullscreen></iframe>';
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFFFFF;
+    font-family: verdana;
+}
+
+main{
+    width: 80%;
+    height: 100vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: linear-gradient(135deg, #1F2226, #474F59);
+    border-radius: 8px;
+    width: 400px;
+    height: 525px;
+    color: #FFF;
+    transition: 1s;
+}
+
+.container:hover{
+    margin-top: -10px;
+    box-shadow: 8px 10px 0px #F27405;
+    transition: 1s;
+}
+
+.content {
+    margin: 2rem auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem auto;
+    text-transform: uppercase;
+    font-size: 28px;
+    background: #F27405;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+input {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+    outline: 0;
+    border-radius: 5px;
+    border: 2px solid transparent;
+}
+
+input:focus {
+    border: 2px solid #F27405;
+}
+
+
+/* Esse comando esconde as setas do input Number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    display: block;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: none;
+    background: #F27405;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.6s;
+    border-radius: 5px;
+}
+
+button:hover {
+    color: #FFF;
+    background: #FF8F2C;
+    transition: 0.6s;
+}
+
+#resultado1 {
+    background: transparent;
+    color: #FFF;
+    text-align: center;
+    font-size: 24pt;
+    margin: 0.5rem;
+}
+
+#resultado2 {
+    background: transparent;
+    color: #FFF;
+    text-align: center;
+    font-size: 22pt;
+    margin: 0.5rem;
+}
+
+#resultado3 {
+    background: transparent;
+    color: #FFF;
+    text-align: center;
+    font-size: 19pt;
+    margin: 0.5rem;
+}
+
+#resultado4 {
+    background: transparent;
+    color: #FFF;
+    text-align: center;
+    font-size: 19pt;
+    margin: 0.5rem;
+}

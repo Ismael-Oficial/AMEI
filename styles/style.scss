@@ -1,0 +1,1543 @@
+$primary-color: #F27405;
+$secondary-color: #232323;
+$tertiary-color: #F9F6F6;
+$default-color: #FFF;
+$dark-color: #000;
+$alternative-color: #fd8720;
+
+@mixin FlexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+header {
+    @include FlexCenter;
+    width: 100%;
+    position: fixed;
+
+    .navbar {
+        @include FlexCenter();
+        justify-content: space-around;
+        background: $default-color;
+        width: 100%;
+        height: 90px;
+
+        a {
+            width: 13%;
+            @include FlexCenter();
+            height: 40px;
+            display: flex;
+            justify-content: space-around;
+            color: $dark-color;
+            text-decoration: none;
+            font-size: 24px;
+            border-radius: 8px;
+
+            &:hover:nth-child(2),
+            &:hover:nth-child(3),
+            &:hover:nth-child(4),
+            &:hover:nth-child(5),
+            &:hover:nth-child(6) {
+                background: $alternative-color;
+                color: $default-color;
+                border-radius: 8px;
+                transition: 0.6s;
+            }
+
+            img {
+                width: 40%;
+                height: auto;
+            }
+        }
+
+        button {
+            width: 190px;
+            height: 55px;
+            background: $primary-color;
+            color: $default-color;
+            border: none;
+            border-radius: 8px;
+            font-size: 32px;
+            cursor: pointer;
+        }
+    }
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+
+    .home-page {
+        background: url(../imgs/Plano_de_Fundo.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include FlexCenter();
+        flex-direction: column;
+        height: 100vh;
+        text-align: center;
+
+        .logo {
+            display: none;
+        }
+
+        .nav {
+            display: none;
+        }
+
+        h1 {
+            color: $default-color;
+            font-size: 80px;
+            text-transform: uppercase;
+            margin: 1rem;
+        }
+
+        p {
+            width: 50%;
+            color: $default-color;
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+}
+
+.container-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+        width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+        padding: 1rem;
+    }
+
+    .about {
+        @include FlexCenter();
+        flex-direction: column;
+        margin: 2rem;
+
+        h2 {
+            color: $primary-color;
+            text-transform: uppercase;
+            font-size: 40px;
+            text-align: center
+        }
+
+        .container-iframe {
+            @include FlexCenter();
+            flex-direction: column;
+
+            .iframe-paragrafo {
+                @include FlexCenter();
+                flex-direction: column;
+                width: 65%;
+
+                img {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+.support {
+    .support {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+        background: url(../imgs/Seta.png);
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+}
+
+.container-plans {
+    background: url(../imgs/Planos.jpg);
+    background-size: cover;
+    height: 100vh;
+    @include FlexCenter();
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card-plans {
+        width: 20%;
+        height: auto;
+        background: $default-color;
+        margin: 1rem;
+        box-shadow: 0px 0px 3px $secondary-color;
+
+        .title {
+            width: 100%;
+            height: 60px;
+            background: $primary-color;
+            color: $default-color;
+            font-size: 150%;
+            text-align: center;
+
+            h3 {
+                height: 100%;
+                @include FlexCenter()
+            }
+        }
+
+        .card-section {
+            h3 {
+                @include FlexCenter();
+                margin: 1rem;
+                color: $alternative-color;
+                font-size: 50px;
+            }
+
+            h4 {
+                width: 90%;
+                margin: 0 auto;
+                color: $dark-color;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 2.5rem;
+            }
+
+            p {
+                width: 90%;
+                margin: 0 auto;
+                color: $dark-color;
+                text-align: start;
+                font-size: 18px;
+                line-height: 2.5rem;
+            }
+        }
+
+        .card-button {
+            width: 90%;
+            height: 60px;
+            background: $alternative-color;
+            color: $default-color;
+            font-size: 150%;
+            text-align: center;
+            margin: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background: $secondary-color;
+            }
+
+            h3 {
+                height: 100%;
+                @include FlexCenter()
+            }
+        }
+    }
+}
+
+.container-events {
+    background: url(../imgs/Eventos.jpg);
+    background-size: cover;
+    height: 100vh;
+    @include FlexCenter();
+    flex-direction: column;
+
+    h2 {
+        width: 100%;
+        color: $alternative-color;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 70px;
+        padding: 2.5rem;
+    }
+
+    .content-events {
+        @include FlexCenter();
+
+        .calendar {
+            @include FlexCenter();
+            flex-direction: column;
+            justify-content: space-around;
+            width: 20%;
+            margin: 0% 5%;
+
+            .timer {
+                width: 148px;
+                height: 117px;
+                background: $primary-color;
+                border-radius: 8px 8px 0px 0px;
+
+                p {
+                    @include FlexCenter();
+                    height: 117px;
+                    font-size: 50px;
+                    font-weight: bold;
+                    color: $default-color;
+                }
+            }
+
+            .timer-info {
+                width: 148px;
+                height: 54px;
+                background: $default-color;
+                border-radius: 0px 0px 8px 8px;
+
+                p {
+                    @include FlexCenter();
+                    height: 54px;
+                    font-size: 23px;
+                    font-weight: bold;
+                    color: $dark-color;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    .info-events {
+        @include FlexCenter();
+        flex-direction: column;
+
+        p {
+            font-size: 40px;
+            color: $default-color;
+            margin: 1rem;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 80px;
+            color: $primary-color;
+            text-align: center;
+        }
+    }
+
+    .info-events-btn {
+        @include FlexCenter();
+
+        button {
+            width: 388px;
+            height: 101px;
+            background: $primary-color;
+            border-radius: 8px;
+            border: none;
+            font-size: 30px;
+            color: $default-color;
+            text-transform: uppercase;
+            margin: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background: $alternative-color;
+            }
+        }
+
+        button:nth-child(2) {
+            width: 388px;
+            height: 101px;
+            background: $alternative-color;
+            border-radius: 8px;
+            border: none;
+            font-size: 30px;
+            color: $default-color;
+            text-transform: uppercase;
+            margin: 1rem;
+            cursor: pointer;
+
+            &:hover {
+                background: $primary-color;
+            }
+        }
+    }
+
+    h4 {
+        @include FlexCenter();
+        align-items: end;
+        font-size: 12px;
+        color: $default-color;
+    }
+}
+
+.container-contact {
+    background: url(../imgs/Contact.jpg);
+    background-size: cover;
+    height: 110vh;
+    @include FlexCenter();
+
+    form {
+        width: 75%;
+        height: auto;
+        background: $default-color;
+        box-shadow: 1px 1px 3px $secondary-color;
+
+        label {
+            @include FlexCenter();
+            width: 100%;
+            color: $primary-color;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 1rem;
+        }
+
+        .area {
+            @include FlexCenter();
+            flex-direction: row;
+
+            input {
+                width: 38.5%;
+                height: 60px;
+                border: none;
+                background: $tertiary-color;
+                margin: 1rem;
+                padding: 1rem;
+                font-size: 26px;
+                outline: none;
+            }
+
+            input::placeholder {
+                @include FlexCenter();
+                height: 60px;
+                font-size: 26px;
+                opacity: 0.3;
+            }
+
+            input[type=email] {
+                width: 80%;
+            }
+
+            input[type=button] {
+                width: 80%;
+                color: $default-color;
+                background: $primary-color;
+                font-weight: bold;
+                cursor: pointer;
+                margin: 2rem;
+
+                &:hover {
+                    background: $alternative-color;
+                }
+            }
+        }
+
+        textarea {
+            width: 80%;
+            height: 250px;
+            border: none;
+            background: $tertiary-color;
+            margin: 1rem;
+            padding: 1rem;
+            font-size: 26px;
+            outline: none;
+            resize: none;
+        }
+
+        textarea::placeholder {
+            @include FlexCenter();
+            height: 60px;
+            font-size: 26px;
+            opacity: 0.3;
+        }
+    }
+}
+
+.container-register {
+    background: url(../imgs/Contact.jpg);
+    background-size: cover;
+    height: 100vh;
+    @include FlexCenter();
+
+    form {
+        background: $default-color;
+        width: 400px;
+        height: 610px;
+        border-radius: 8px;
+        box-shadow: 0px 1px 3px $secondary-color;
+
+        h2 {
+            @include FlexCenter();
+            margin: 1rem;
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        input {
+            @include FlexCenter();
+            width: 350px;
+            height: 70px;
+            border: none;
+            background: $tertiary-color;
+            border-radius: 8px;
+            margin: 0.5rem;
+            padding: 15px;
+            font-size: 36px;
+            font-weight: bold;
+            outline: none;
+            margin: 1.5rem;
+        }
+
+        input::placeholder {
+            opacity: 0.2;
+        }
+
+        input[type=button] {
+            @include FlexCenter();
+            width: 350px;
+            height: 75px;
+            border: none;
+            background: $primary-color;
+            color: #FFF;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+            text-transform: uppercase;
+
+            &:hover {
+                background: $alternative-color
+            }
+        }
+
+        input[type=radio] {
+            @include FlexCenter();
+            width: 10%;
+        }
+
+        .option {
+            @include FlexCenter();
+        }
+    }
+}
+
+.container-login {
+    background: url(../imgs/Planos-2.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+
+    form {
+        @include FlexCenter();
+        flex-direction: column;
+        width: 50%;
+        height: 100vh;
+        background: $default-color;
+        float: right;
+
+        .logo {
+            @include FlexCenter();
+            flex-direction: column;
+
+            h2 {
+                text-transform: uppercase;
+                font-size: 50px;
+                margin: 1rem;
+            }
+        }
+
+        .login-input {
+            @include FlexCenter();
+            width: 100%;
+
+            input {
+                width: 70%;
+                height: 95px;
+                border-radius: 8px;
+                border: none;
+                outline: none;
+                background: $tertiary-color;
+                margin: 0.5rem;
+                padding: 1rem;
+                font-size: 30px;
+            }
+
+            input::placeholder {
+                font-size: 30px;
+                padding: 1rem;
+            }
+
+            input[type=checkbox] {
+                width: 32px;
+                height: 55px;
+            }
+
+            input[type=submit] {
+                background: $primary-color;
+                color: $default-color;
+                font-size: 50px;
+                text-transform: uppercase;
+                cursor: pointer;
+
+                &:hover {
+                    background: $alternative-color;
+                }
+            }
+
+            input[type=button] {
+                background: $dark-color;
+                color: $default-color;
+                font-size: 50px;
+                text-transform: uppercase;
+                cursor: pointer;
+
+                &:hover {
+                    background: $secondary-color;
+                }
+            }
+
+            a {
+                text-decoration: none;
+                color: $dark-color;
+                margin-left: 20%;
+            }
+        }
+    }
+}
+
+.footer {
+    position: relative;
+    height: auto;
+    background-color: $secondary-color;
+  }
+  .footer .col {
+    width: 190px;
+    height: auto;
+    float: left;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0px 20px 20px 20px;
+  }
+  .footer .col a{
+    color: $default-color;
+    opacity: 0.5;
+    font-size: 100;
+  }
+  .footer .col h1 {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 17px;
+    padding: 20px 0px 5px 0px;
+    color: $alternative-color;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.250em;
+  }
+  .footer .col ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer .col ul li {
+    color: #999999;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 5px 0px 5px 0px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+  }
+  .social ul li {
+    display: inline-block;
+    padding-right: 5px !important;
+  }
+  
+  .footer .col ul li:hover {
+    color: #ffffff;
+    transition: .1s;
+    -webkit-transition: .1s;
+    -moz-transition: .1s;
+  }
+  .clearfix {
+    clear: both;
+  }
+  @media only screen and (min-width: 1280px) {
+    .contain {
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+  @media only screen and (max-width: 1139px) {
+    .contain .social {
+      width: 1000px;
+      display: block;
+    }
+    .social h1 {
+      margin: 0px;
+    }
+  }
+  @media only screen and (max-width: 950px) {
+    .footer .col {
+      width: 33%;
+    }
+    .footer .col h1 {
+      font-size: 14px;
+    }
+    .footer .col ul li {
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+      .footer .col {
+        width: 50%;
+      }
+      .footer .col h1 {
+        font-size: 14px;
+      }
+      .footer .col ul li {
+        font-size: 13px;
+      }
+  }
+  @media only screen and (max-width: 340px) {
+    .footer .col {
+      width: 100%;
+    }
+  }
+
+@media only screen and (max-width: 1150px) {
+    .container-about {
+        height: 116vh;
+    }
+
+    .container-plans {
+        @include FlexCenter();
+        flex-wrap: wrap;
+        height: 100vh;
+
+        .card-plans {
+            width: 30%;
+        }
+
+        .card-plans:nth-child(2) {
+            display: none;
+        }
+    }
+}
+
+.container-reset {
+    width: 100%;
+    height: 100vh;
+    background: url(../imgs/Planos.jpg);
+    background-size: cover;
+    @include FlexCenter();
+
+    form {
+        width: 600px;
+        height: 380px;
+        background: $default-color;
+        border-radius: 12px;
+        @include FlexCenter();
+        flex-direction: column;
+
+        label {
+            font-size: 34px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1rem;
+        }
+
+        input {
+            width: 400px;
+            height: 80px;
+            border: none;
+            background: $tertiary-color;
+            border-radius: 12px;
+            margin: 0.5rem;
+            padding: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            outline: none;
+        }
+
+        input::placeholder {
+            opacity: 0.3;
+        }
+
+        input[type=button] {
+            width: 400px;
+            height: 80px;
+            border: none;
+            background: $primary-color;
+            color: $default-color;
+            border-radius: 12px;
+            margin: 0.5rem;
+            padding: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: $dark-color;
+            font-size: 20px;
+        }
+    }
+}
+
+.container-new-password {
+    width: 100%;
+    height: 100vh;
+    background: url(../imgs/Planos.jpg);
+    background-size: cover;
+    @include FlexCenter();
+
+    form {
+        width: 600px;
+        height: 450px;
+        background: $default-color;
+        border-radius: 12px;
+        @include FlexCenter();
+        flex-direction: column;
+
+        label {
+            font-size: 34px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 1.5rem;
+        }
+
+        input {
+            width: 400px;
+            height: 80px;
+            border: none;
+            background: $tertiary-color;
+            border-radius: 12px;
+            margin: 0.5rem;
+            padding: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            outline: none;
+            margin: 0.5rem;
+        }
+
+        input::placeholder {
+            opacity: 0.3;
+        }
+
+        input[type=button] {
+            width: 400px;
+            height: 80px;
+            border: none;
+            background: $primary-color;
+            color: $default-color;
+            border-radius: 12px;
+            margin: 0.5rem;
+            padding: 15px;
+            font-size: 42px;
+            font-weight: bold;
+            outline: none;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: $dark-color;
+            font-size: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    header {
+        .navbar {
+            @include FlexCenter();
+            width: 100%;
+            height: 90px;
+
+            a {
+                font-size: 24px;
+
+                &:nth-child(1) {
+                    font-size: 40px;
+                }
+            }
+
+            button {
+                width: 130px;
+                height: 45px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .container-about {
+        height: 115vh;
+    }
+
+    .container-login {
+        background: url(../imgs/Planos-2.jpg);
+        background-size: contain;
+        width: 100%;
+        height: 100vh;
+
+        form {
+            @include FlexCenter();
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background: $default-color;
+        }
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .container-about {
+        height: 100vh;
+        @include FlexCenter();
+        flex-direction: column;
+
+        .about {
+            .container-iframe {
+
+                .iframe-paragrafo {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    .container-plans {
+
+        .card-plans {
+            width: 50%;
+        }
+
+        .card-plans:nth-child(1),
+        .card-plans:nth-child(3),
+        .card-plans:nth-child(5) {
+            display: none;
+        }
+
+        .plans-header {
+            h2 {
+                font-size: 100%;
+                width: 20%;
+                height: 50px;
+            }
+        }
+    }
+
+    .container-events {
+
+        h2 {
+            font-size: 50px;
+        }
+
+        .content-events {
+            .calendar {
+
+                .timer {
+                    width: 100px;
+                    height: 80px;
+
+                    p {
+                        height: 80px;
+                        font-size: 40px;
+                    }
+                }
+
+                .timer-info {
+                    width: 100px;
+                    height: 25px;
+
+                    p {
+                        height: 25px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+
+        .info-events {
+            p {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 60px;
+            }
+        }
+
+        .info-events-btn {
+
+            button {
+                width: 230px;
+                height: 60px;
+                font-size: 20px;
+            }
+
+            button:nth-child(2) {
+                width: 230px;
+                height: 60px;
+                font-size: 20px;
+            }
+
+        }
+
+        h4 {
+            @include FlexCenter();
+            align-items: end;
+            height: 10%;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .container-contact {
+
+        form {
+            height: 600px;
+
+            label {
+                font-size: 40px;
+            }
+
+            .area {
+
+                input {
+                    width: 39%;
+                    font-size: 20px;
+                    margin: 0rem 1%;
+                }
+
+                input::placeholder {
+                    font-size: 20px;
+                }
+
+                input[type=email] {
+                    margin: 1rem;
+                }
+
+                input[type=button] {
+                    margin: 1rem;
+                }
+            }
+
+            textarea {
+                height: 200px;
+                font-size: 20px;
+                margin: 0rem;
+            }
+
+            textarea::placeholder {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    header {
+        .navbar {
+
+            a {
+                font-size: 18px;
+
+                &:nth-child(1) {
+                    font-size: 30px;
+                }
+            }
+
+            button {
+                width: 15%;
+                height: 40px;
+                font-size: 100%;
+            }
+        }
+    }
+
+    section {
+        .home-page {
+
+            h1 {
+                font-size: 70px;
+                margin: 1rem;
+            }
+
+            p {
+                width: 60%;
+                font-size: 18px;
+                text-align: center;
+            }
+        }
+    }
+
+    .support {
+        .support {
+            display: none;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 630px) {
+
+    .container-login {
+        background: url(../imgs/Planos-2.jpg);
+        background-size: contain;
+        width: 100%;
+        height: 100vh;
+
+        form {
+            @include FlexCenter();
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            background: $default-color;
+
+            .login-input {
+                @include FlexCenter();
+                width: 100%;
+
+                input {
+                    width: 70%;
+                    height: 65px;
+                    border-radius: 8px;
+                    border: none;
+                    outline: none;
+                    background: $tertiary-color;
+                    margin: 0.5rem;
+                    padding: 1rem;
+                    font-size: 30px;
+                }
+
+                input[type=submit] {
+                    font-size: 30px;
+                }
+
+                input[type=button] {
+                    font-size: 30px;
+                }
+
+                a {
+                    margin-left: 5%;
+                }
+            }
+        }
+
+    }
+
+    .container-reset {
+
+        form {
+            width: 90%;
+
+            input {
+                width: 80%;
+            }
+
+            input[type=button] {
+                width: 100%;
+                margin: 0rem;
+            }
+
+            a {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    }
+
+    .container-new-password {
+
+        form {
+            width: 90%;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    header {
+        display: none;
+    }
+
+    section {
+        .home-page {
+            height: 100vh;
+
+            .logo {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                display: block;
+
+                img {
+                    width: 70px;
+                }
+            }
+
+            .nav {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                display: block;
+
+                button {
+                    width: 120px;
+                    height: 50px;
+                    background: $primary-color;
+                    color: $default-color;
+                    border: none;
+                    border-radius: 8px;
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .container-plans {
+        .plans-header {
+            display: none;
+        }
+
+        .card-plans {
+            width: 300px;
+        }
+    }
+
+    .container-about {
+
+        p {
+            font-size: 14px
+        }
+
+        .about {
+
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+
+    .container-events {
+
+        h4 {
+            font-size: 10px;
+            height: 5%;
+        }
+    }
+
+    .container-contact {
+        form {
+            width: 90%;
+            height: auto;
+
+            .area {
+                input {
+                    font-size: 13px;
+                }
+
+                input::placeholder {
+                    font-size: 13px;
+                }
+            }
+
+            textarea {
+                font-size: 14px;
+            }
+
+            textarea::placeholder {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 520px) {
+
+    .container-new-password {
+
+        form {
+            width: 90%;
+            height: auto;
+
+            label {
+                font-size: 28px;
+            }
+
+            input {
+                width: 90%;
+            }
+
+            input::placeholder {
+                font-size: 80%;
+            }
+
+            input[type=button] {
+                width: 90%;
+                font-size: 28px;
+                margin: 1rem;
+            }
+
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .container-events {
+        h2 {
+            font-size: 50px;
+        }
+
+        .content-events {
+            .calendar {
+                margin: 0% 4%;
+                .timer {
+                    width: 80px;
+                    height: 60px;
+
+                    p {
+                        height: 60px;
+                        font-size: 30px;
+                    }
+                }
+
+                .timer-info {
+                    width: 80px;
+                    height: 24px;
+
+                    p {
+                        height: 24px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .info-events {
+            p {
+                font-size: 18px;
+            }
+
+            h3 {
+                font-size: 30px;
+            }
+        }
+
+        .info-events-btn{
+            button{
+                width: 130px;
+                height: 50px;
+                font-size: 12px;
+            }
+
+            button:nth-child(2){
+                width: 130px;
+                height: 50px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .container-reset {
+
+        form {
+            width: 90%;
+
+            label {
+                font-size: 24px;
+            }
+
+            input {
+                width: 80%;
+            }
+
+            input::placeholder {
+                font-size: 34px;
+            }
+
+            input[type=button] {
+                width: 100%;
+                margin: 0rem;
+                font-size: 34px;
+            }
+
+            a {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    }
+
+    .container-register {
+
+        form {
+            width: 90%;
+            height: auto;
+
+            input {
+                width: 90%;
+                margin: 1rem;
+            }
+
+            input::placeholder {
+                font-size: 80%;
+            }
+
+            input[type=button] {
+                width: 90%;
+                font-size: 28px;
+            }
+
+            input[type=radio] {
+                width: 10%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 355px) {
+    .container-reset {
+
+        form {
+            width: 90%;
+
+            label {
+                font-size: 20px;
+            }
+
+            input {
+                width: 80%;
+            }
+
+            input::placeholder {
+                font-size: 24px;
+            }
+
+            input[type=button] {
+                width: 100%;
+                margin: 0rem;
+                font-size: 24px;
+            }
+
+            a {
+                width: 80%;
+                text-align: center;
+                margin: 1rem;
+            }
+        }
+    }
+
+    .container-register {
+
+        form {
+            width: 90%;
+            height: auto;
+
+            h2 {
+                font-size: 28px
+            }
+
+            input {
+                width: 90%;
+                height: 60px;
+                margin: 1rem;
+            }
+
+            input::placeholder {
+                font-size: 70%;
+            }
+
+            input[type=button] {
+                width: 90%;
+                font-size: 24px;
+                height: 60px;
+
+                .container-register {
+
+                    form {
+                        width: 90%;
+                        height: auto;
+
+                        h2 {
+                            font-size: 28px
+                        }
+
+                        input {
+                            width: 90%;
+                            height: 60px;
+                            margin: 1rem;
+                        }
+
+                        input::placeholder {
+                            font-size: 80%;
+                        }
+
+                        input[type=button] {
+                            width: 90%;
+                            height: 60px;
+                            font-size: 28px;
+                        }
+
+                        input[type=radio] {
+                            width: 10%;
+                        }
+                    }
+                }
+
+            }
+
+            input[type=radio] {
+                width: 10%;
+            }
+        }
+    }
+
+    .container-new-password {
+
+        form {
+            height: auto;
+
+            label {
+                font-size: 20px;
+            }
+
+            input {
+                width: 90%;
+                height: 60px;
+            }
+
+            input::placeholder {
+                font-size: 60%;
+            }
+
+            input[type=button] {
+                width: 90%;
+                font-size: 20px;
+                height: 60px;
+            }
+        }
+    }
+}

@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.sidebar {
+  width: 20%;
+  height: 100vh;
+  background: #1F2226;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  float: left;
+}
+.sidebar .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FF8F2C;
+  font-size: 80px;
+  height: 25vh;
+}
+.sidebar .logo img {
+  width: 70%;
+}
+.sidebar .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .search input {
+  width: 90%;
+  height: 3rem;
+  border-radius: 8px;
+  border: none;
+  background: #474F59;
+  outline: none;
+  color: #FFFFFF;
+  padding: 1rem;
+  font-size: 24px;
+}
+.sidebar .search input::-moz-placeholder {
+  color: #FFFFFF;
+  opacity: 0.4;
+}
+.sidebar .search input::placeholder {
+  color: #FFFFFF;
+  opacity: 0.4;
+}
+.sidebar .nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: start;
+  flex-direction: column;
+}
+.sidebar .nav a {
+  width: 90%;
+  text-decoration: none;
+  color: #FF8F2C;
+  font-size: 25px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+.sidebar .nav a:hover {
+  background: #FF8F2C;
+  color: #1F2226;
+  border-radius: 8px;
+}
+.sidebar .perfil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem;
+  width: 90%;
+  height: 80px;
+  border-radius: 8px;
+  background: #1F2226;
+  cursor: pointer;
+}
+.sidebar .perfil:hover {
+  background: #474F59;
+}
+.sidebar .perfil img {
+  width: 20%;
+  border-radius: 50%;
+}
+.sidebar .perfil img:nth-child(3) {
+  width: 13%;
+  border-radius: 50%;
+}
+.sidebar .perfil p {
+  color: #FFFFFF;
+  font-size: 25px;
+}
+
+#logout {
+  display: none;
+  position: absolute;
+  bottom: 150px;
+  left: 15.5px;
+  width: 260px;
+  height: 60px;
+  background: #1F2226;
+  cursor: pointer;
+}
+#logout a {
+  background: #1F2226;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  height: 60px;
+}
+#logout a:hover {
+  background: #474F59;
+  border-radius: 5px;
+}/*# sourceMappingURL=MENTOR.css.map */

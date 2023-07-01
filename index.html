@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Inicial | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="navbar" id="navbar">
+            <a href="index.html">
+                <img src="imgs/logo.png" alt="Logo do Projeto">
+            </a>
+            <a href="#home">Inicio</a>
+            <a href="#about">Sobre</a>
+            <a href="#plans">Planos</a>
+            <a href="#events">Eventos</a>
+            <a href="#contact">Contato</a>
+            <button id="AreaCliente" onclick="AreaLogin()">Area Cliente</button>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="home-page">
+            <div class="logo">
+                <img src="imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="nav">
+                <button id="AreaCliente" onclick="AreaLogin()">Area Cliente</button>
+            </div>
+            <h1>Seja Bem Vindo</h1>
+            <p>Somos uma empresa que presa pelo crescimento do microempreendedor periferico.</p>
+        </div>
+    </section>
+
+    <section class="container-about" id="about">
+        <div class="about">
+            <h2>Historias que Inspiram</h2>
+            <div class="container-iframe">
+                <div class="iframe-paragrafo">
+                    <p>Fernanda iniciou sua carreira como vendedora de marmitas em 2010, onde começou a vender marmitas
+                        para motoristas de ônibus.</p>
+                    <p>Fernanda não queria manter aquele negócio todos os dias por conta de sua rotina exaustiva. Sua
+                        rotina era levantar, preparar as marmitas e as bebidas, e ir ao shopping no seu ponto de venda
+                        para passar o resto da tarde. Decidiu abrir sua microempresa</p>
+                    <p>Mas ela acabou quebrando pois ela não sabia fazer a gestão de sua micro empresa, não sabia
+                        administrar e reconhecer o que era lucro pessoal e lucro do seu negócio, e por isso, Fernanda
+                        acabou fechando sua microempresa e desistindo de seu negócio.</p>
+                    <img src="imgs/ExemploProfissional.jpeg" alt="Fernanda">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="plans">
+        <div class="container-plans">
+            <div class="card-plans">
+                <div class="title">
+                    <h3>Plano Mensal</h3>
+                </div>
+                <div class="card-section">
+                    <h3>$59,90</h3>
+                    <p>• Ferramentas Administrativas</p>
+                    <p>• Treinamentos Personalizados</p>
+                    <p>• Mentorias Exclusivas</p>
+                    <p>• Suporte Online 24h</p>
+                </div>
+                <div class="card-button">
+                    <h3>Ver Plano</h3>
+                </div>
+            </div>
+            <div class="card-plans">
+                <div class="title">
+                    <h3>Plano Trimestral</h3>
+                </div>
+                <div class="card-section">
+                    <h3>$169,99</h3>
+                    <p>• Ferramentas Administrativas</p>
+                    <p>• Treinamentos Personalizados</p>
+                    <p>• Mentorias Exclusivas</p>
+                    <p>• Suporte Online 24h</p>
+                </div>
+                <div class="card-button">
+                    <h3>Ver Plano</h3>
+                </div>
+            </div>
+            <div class="card-plans">
+                <div class="title">
+                    <h3>Plano Semestral</h3>
+                </div>
+                <div class="card-section">
+                    <h3>$299,90</h3>
+                    <p>• Ferramentas Administrativas</p>
+                    <p>• Treinamentos Personalizados</p>
+                    <p>• Mentorias Exclusivas</p>
+                    <p>• Suporte Online 24h</p>
+                </div>
+                <div class="card-button">
+                    <h3>Ver Plano</h3>
+                </div>
+            </div>
+            <div class="card-plans">
+                <div class="title" style="background: #232323;">
+                    <h3>Plano Anual</h3>
+                </div>
+                <div class="card-section">
+                    <h3 style="color: #232323;">$499,99</h3>
+                    <h4>Melhor Preço!</h4>
+                    <p>• Ferramentas Administrativas</p>
+                    <p>• Treinamentos Personalizados</p>
+                    <p>• Mentorias Exclusivas</p>
+                    <p>• Suporte Online 24h</p>
+                </div>
+                <div class="card-button" style="background: #232323;">
+                    <h3>Ver Plano</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events">
+        <div class="container-events">
+            <h2>Faltam</h2>
+            <div class="content-events">
+                <div class="calendar">
+                    <div class="timer">
+                        <p id="days"></p>
+                    </div>
+                    <div class="timer-info">
+                        <p>Dias</p>
+                    </div>
+                </div>
+                <div class="calendar">
+                    <div class="timer">
+                        <p id="hours"></p>
+                    </div>
+                    <div class="timer-info">
+                        <p>Horas</p>
+                    </div>
+                </div>
+                <div class="calendar">
+                    <div class="timer">
+                        <p id="mins"></p>
+                    </div>
+                    <div class="timer-info">
+                        <p>Minutos</p>
+                    </div>
+                </div>
+                <div class="calendar">
+                    <div class="timer">
+                        <p id="seconds"></p>
+                    </div>
+                    <div class="timer-info">
+                        <p>Segundos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-events">
+                <p>O Maior evento empresarial do pais</p>
+                <h3>WORKSHOP FEST 2023</h3>
+            </div>
+
+            <div class="info-events-btn">
+                <button>Conhecer Mais</button>
+                <button>Garantir Ingresso</button>
+            </div>
+
+            <h4>Todos os direitos dos evento estão reservados aos parceiros da AMEI.</h4>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container-contact">
+            <form>
+                <label>Contato</label>
+
+                <div class="area">
+                    <input type="text" placeholder="Primeiro Nome" required>
+                    <input type="text" placeholder="Ultimo Nome" required>
+                </div>
+
+                <div class="area">
+                    <input type="email" placeholder="Email: ex emailemeplo@exemplo.com" required>
+                </div>
+
+                <div class="area">
+                    <textarea placeholder="Escreva sua Mensagem..." required></textarea>
+                </div>
+
+                <div class="area">
+                    <input type="button" value="ENVIAR">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="contain">
+                <div class="col">
+                    <h1>Empresa</h1>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Sobre nós</a></li>
+                        <li><a href="#plans">Planos</a></li>
+                        <li><a href="#events">Eventos</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Equipe</h1>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/guicamargodev/">Guilherme Camargo</a></li>
+                        <li><a href="https://www.linkedin.com/in/eduardosouzadev/">Eduardo Souza</a></li>
+                        <li><a href="https://www.linkedin.com/in/ismael-oficial/">Ismael Chaves</a></li>
+                        <li><a href="https://www.linkedin.com/in/iago-souza-50414a1b4/">Iago Souza</a></li>
+                        <li><a href="https://www.linkedin.com/in/priscilaxavierdev/">Priscila Xavier</a></li>
+                        <li><a href="https://www.linkedin.com/in/devpedrooliveira/">Pedro Oliveira</a></li>
+                        <li><a href="https://www.linkedin.com/in/devjulialopes/">Julia Lopes</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Parceiros</h1>
+                    <ul>
+                        <li><a href="https://www.instagram.com/instituto.proa/">Instituto PROA</a></li>
+                        <li><a href="https://www.instagram.com/senactito/">Senac Tito</a></li>
+                        <li><a href="https://www.instagram.com/easy_hoteis/">Easy Hoteis</a></li>
+                        <li><a href="https://www.instagram.com/bancopan/">Banco PAN</a></li>
+                        <li><a href="https://www.instagram.com/escola_da_nuvem/">Escola da Nuvem</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Redes Sociais</h1>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/company/amei-ltda/">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/ameioprojeto/">Instagram</a></li>
+                        <li><a href="https://github.com/AMEI-Demoday">GitHub</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Suporte</h1>
+                    <ul>
+                        <li>ameioprojeto@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="support">
+        <a href="#home">
+            <div class="support"></div>
+        </a>
+    </div>
+
+    <script>
+        function AreaLogin() {
+            var AreaCliente = document.getElementById('AreaCliente');
+
+            AreaCliente = location.href = "login.html";
+        }
+
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minsEl = document.getElementById('mins');
+        const secondssEl = document.getElementById('seconds');
+
+        const newYears = "1 Jan 2024"
+
+        function countDown() {
+
+            const newYearsDate = new Date(newYears);
+            const currentDate = new Date();
+
+            const totalSeconds = (newYearsDate - currentDate) / 1000;
+
+            const days = Math.floor(totalSeconds / 3600 / 24);
+            const hours = Math.floor(totalSeconds / 3600) % 24;
+            const mins = Math.floor(totalSeconds / 60) % 60;
+            const seconds = Math.floor(totalSeconds) % 60;
+
+            daysEl.innerHTML = days;
+            hoursEl.innerHTML = formatTime(hours);
+            minsEl.innerHTML = formatTime(mins);
+            secondssEl.innerHTML = formatTime(seconds);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? `0${time}` : time
+        }
+
+        countDown();
+
+        setInterval(countDown, 1000);
+    </script>
+</body>
+
+</html>

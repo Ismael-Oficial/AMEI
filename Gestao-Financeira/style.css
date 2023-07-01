@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+article{
+    width: 80%;
+    height: 20vh;
+    background: #1F2226;
+    color: #F27405;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+section {
+    width: 80%;
+    height: 80vh;
+    background: #1F2226;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    float: right;
+}
+
+#video-player {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-playlist {
+    width: 20%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    float: right;
+}
+
+button {
+    width: 90%;
+    height: 45px;
+    background: #F27405;
+    color: #1F2226;
+    border: none;
+    border-radius: 12px;
+    margin: 2% 0%;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #FF8F2C;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferramentas | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="../styles/MEI.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="nav">
+                <a href="ferramentas.html">Ferramentas</a>
+                <a href="treinamentos.html">Treinamentos</a>
+                <a href="#" onclick="Alerta()">Mentorias</a>
+                <a href="#" onclick="Alerta()">Eventos</a>
+                <a href="#" onclick="Alerta()">Notificações</a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../imgs/perfil.jpeg" alt="Imagem de Usuario">
+                <p>Iago Souza</p>
+                <img src="../imgs/question.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="main-ferramentas">
+            <div class="ferramentas">
+                <div class="card-ferramentas" id="acesso1" onclick="FluxoCaixa()">
+                    <img src="../imgs/fluxo-de-dinheiro.png" alt="Calculadora">
+                    <p>Fluxo de caixa</p>
+                </div>
+                <div class="card-ferramentas" id="acesso2" onclick="CalculadoraLucro()">
+                    <img src="../imgs/calculadora.png" alt="Calculadora">
+                    <p>Calculadora</p>
+                </div>
+                <div class="card-ferramentas" onclick="Alerta()">
+                    <img src="../imgs/lista-de-controle.png" alt="Calculadora">
+                    <p>CONTROLE ESTOQUE</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="logout">
+            <a href="perfil.html">Perfil</a>
+            <a href="../index.html">Log Out</a>
+        </div>
+    </section>
+    
+    <script src="../script.js"></script>
+
+    <script>
+        function FluxoCaixa(){
+            var acesso = document.getElementById('acesso1');
+            acesso1 = location.href = "../FluxoCaixa/FluxoCaixa.html"
+        }
+
+        function CalculadoraLucro(){
+            var acesso = document.getElementById('acesso2');
+            acesso2 = location.href = "../CalculadoraLucro/CalculadoraLucro.html"
+        }
+    </script>
+</body>
+
+</html>

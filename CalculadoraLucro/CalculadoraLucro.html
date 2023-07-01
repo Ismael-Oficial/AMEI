@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Lucro | AMEI</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../styles/MEI.css">
+      </head>
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="nav">
+                <a href="../MEI/ferramentas.html">Ferramentas</a>
+                <a href="../MEI/treinamentos.html">Treinamentos</a>
+                <a href="#" onclick="Alerta()">Mentorias</a>
+                <a href="#" onclick="Alerta()">Eventos</a>
+                <a href="#" onclick="Alerta()">Notificações</a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../imgs/perfil.jpeg" alt="Imagem de Usuario">
+                <p>Iago Souza</p>
+                <img src="../imgs/question.png" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="content">
+                <h1>Calcular Lucro</h1>
+                <input type="number" id="valor" placeholder="Digite o valor do custo">
+                <br>
+                <input type="number" id="percentual" placeholder="Digite a porcentagem do lucro">
+            </div>
+            <div class="btn">
+                <button onclick="lucro()">Calcular</button>
+                <p id="resultado4"></p>
+                <p id="resultado3"></p>
+                <p id="resultado2"></p>
+                <p id="resultado1"></p>
+            </div>
+        </div>
+    </main>
+
+    <div id="logout">
+        <a href="../MEI/perfil.html">Perfil</a>
+        <a href="../index.html">Log Out</a>
+    </div>
+
+    <script src="function.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
