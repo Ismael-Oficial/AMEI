@@ -15,7 +15,7 @@ $alternative-color: #fd8720;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nunito', sans-serif;
     text-decoration: none;
 }
 
@@ -419,7 +419,7 @@ section {
                 width: 80%;
             }
 
-            input[type=button] {
+            input[type=submit] {
                 width: 80%;
                 color: $default-color;
                 background: $primary-color;

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
   text-decoration: none;
 }
 
@@ -407,7 +407,7 @@ section .home-page p {
 .container-contact form .area input[type=email] {
   width: 80%;
 }
-.container-contact form .area input[type=button] {
+.container-contact form .area input[type=submit] {
   width: 80%;
   color: #FFF;
   background: #F27405;
@@ -415,7 +415,7 @@ section .home-page p {
   cursor: pointer;
   margin: 2rem;
 }
-.container-contact form .area input[type=button]:hover {
+.container-contact form .area input[type=submit]:hover {
   background: #fd8720;
 }
 .container-contact form textarea {
