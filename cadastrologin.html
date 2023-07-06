@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cadastro login</title>
+  <link rel="icon" type="image/x-icon" href="LOGO__1 SemFunddo.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/stylearea.css">
+</head>
+
+<body>
+  <div id="app" class="container"></div>
+
+  <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Formulario({ botao, eventoTeclado, cadastrar, obj, cancelar, remover, alterar }) {
+      return (
+        <form class="form">
+          <div class="login">Usuario</div>
+          <div class="nome">
+          <input type="usuario" value={obj.usuario} onChange={eventoTeclado} name="usuario" placeholder="Digite seu nome de usuario" class="form-control" />
+          </div>
+
+          <div class="numero">
+          <input type="password" value={obj.password} onChange={eventoTeclado} name="password" placeholder="Digite sua senha" class="form-control" />
+        </div>
+
+        <div class="text">
+          <input type="tipo_perfil " value={obj.tipo_perfil} onChange={eventoTeclado} name="tipo_perfil" placeholder="Perfil" class="form-control" />
+        </div>
+        
+          <input type="button" value="Cadastrar" onClick={cadastrar} className="btn-primary" />
+
+
+        </form>
+      );
+    }
+
+    function Tabela({ vetor, selecionar }) {
+    }
+
+    function App() {
+      const usuario = {
+        id_usuario: 0,
+        usuario: "",
+        password: "",
+        tipo_perfil: ""
+      };
+
+      const [btnCadastrar, setBtnCadastrar] = React.useState(true);
+      const [usuarios, setUsuarios] = React.useState([]);
+      const [objUsuario, setObjUsuario] = React.useState(usuario);
+
+      React.useEffect(() => {
+        fetch("http://localhost:8080/usuario/listar")
+          .then(retorno => retorno.json())
+          .then(retorno_convertido => setUsuarios(retorno_convertido));
+      }, []);
+
+      const aoDigitar = (e) => {
+        setObjUsuario({ ...objUsuario, [e.target.name]: e.target.value });
+      };
+
+      const cadastrar = () => {
+        fetch('http://localhost:8080/usuario/cadastrar', {
+          method: 'post',
+          body: JSON.stringify(objUsuario),
+          headers: {
+            'Content-type': 'application/json',
+            'Accept': 'application/json'
+          }
+        })
+          .then(retorno => retorno.json())
+          .then(retorno_convertido => {
+            if (retorno_convertido.mensagem !== undefined) {
+              alert(retorno_convertido.mensagem);
+            } else {
+              setUsuarios([...usuarios, retorno_convertido]);
+              alert('Usuário cadastrado com sucesso');
+              cadastrarStorage();
+              limparFormulario();
+              console.log(retorno_convertido);
+              var exemplo = retorno_convertido.id_usuario;
+              window.location.href = "cadastrodados.html?id=" + exemplo;
+
+            };
+          });
+      };
+
+      const limparFormulario = () => {
+        setObjUsuario(usuario);
+        setBtnCadastrar(true);
+      };
+
+      const cadastrarStorage = () => {
+        const username = objUsuario.usuario;
+        const password = objUsuario.password;
+
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+        exibirDadosSalvos();
+      }
+      
+      const exibirDadosSalvos = () => {
+        const dados = localStorage.getItem('dados');
+        if (dados) {
+          console.log("Dados salvos: " + dados);
+        } else {
+          console.log("Nenhum dado salvo.");
+        }
+      }
+
+      return (
+        <div className="App">
+          <Formulario
+            botao={btnCadastrar}
+            eventoTeclado={aoDigitar}
+            cadastrar={cadastrar}
+            obj={objUsuario}
+            cancelar={limparFormulario}
+          
+          />
+          <Tabela vetor={usuarios}/>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("app"));
+  </script>
+</body>
+
+</html>

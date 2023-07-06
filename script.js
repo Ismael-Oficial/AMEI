@@ -1,6 +1,6 @@
 function RegisterClick() {
     var BtnRegister = document.getElementById('BtnRegister');
-    BtnRegister = location.href = "register.html"
+    BtnRegister = location.href = "cadastrologin.html"
 }
 
 function logar() {
@@ -44,12 +44,51 @@ function CursoEmpreender() {
     CursoUm = location.href = "../Empreendedorismo/index.html"
 }
 
-function CursoMarketing(){
+function CursoMarketing() {
     var CursoDois = document.getElementById('CursoUm')
     CursoDois = location.href = "../Marketing-Digital/index.html"
 }
 
-function CursoGestao(){
+function CursoGestao() {
     var CursoTres = document.getElementById('CursoUm')
     CursoTres = location.href = "../Gestao-Financeira/index.html"
 }
+
+var app = {
+    settings: {
+        container: $('.calendar'),
+        calendar: $('.front'),
+        days: $('.weeks span'),
+        form: $('.back'),
+        input: $('.back input'),
+        buttons: $('.back button')
+    },
+
+    init: function () {
+        instance = this;
+        settings = this.settings;
+        this.bindUIActions();
+    },
+
+    swap: function (currentSide, desiredSide) {
+        settings.container.toggleClass('flip');
+
+        currentSide.fadeOut(900);
+        currentSide.hide();
+        desiredSide.show();
+
+    },
+
+    bindUIActions: function () {
+        settings.days.on('click', function () {
+            instance.swap(settings.calendar, settings.form);
+            settings.input.focus();
+        });
+
+        settings.buttons.on('click', function () {
+            instance.swap(settings.form, settings.calendar);
+        });
+    }
+}
+
+app.init();

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Nunito:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap');
+
+body {
+  background-color: #909090;
+  border-radius: 25px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 450px;
+  background-color: #474F59;
+  border: 5px solid #474F59;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  text-align: center;
+  font-size: 45px;
+  font-family: 'Nunito', sans-serif;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.form {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+
+.nome,
+.data,
+.numero,
+.email,
+.texto {
+  margin: 1rem 0rem;
+}
+
+.btn-primary {
+  margin: 1rem 0rem;
+  width: 400px;
+  height: 50px;
+  background-color: #ff7700;
+  font-family: 'PT sans', sans-serif;
+  font-size: 25px;
+  border-radius: 10px;
+  border: none;
+  color: #3D3D3D;
+}
+
+.btn-primary:hover {
+  background-color: #FF8F2C;
+  border-color: #FF8F2C;
+  font-family: 'PT sans', sans-serif;
+  font-size: 25px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.form-control {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  width: 400px;
+  height: 50px;
+}

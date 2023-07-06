@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito", sans-serif;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
 }
 
@@ -394,7 +394,7 @@ section .home-page p {
   align-items: center;
   height: 60px;
   font-size: 26px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .container-contact form .area input::placeholder {
   display: flex;
@@ -402,7 +402,7 @@ section .home-page p {
   align-items: center;
   height: 60px;
   font-size: 26px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .container-contact form .area input[type=email] {
   width: 80%;
@@ -435,7 +435,7 @@ section .home-page p {
   align-items: center;
   height: 60px;
   font-size: 26px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 .container-contact form textarea::placeholder {
   display: flex;
@@ -443,7 +443,7 @@ section .home-page p {
   align-items: center;
   height: 60px;
   font-size: 26px;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .container-register {

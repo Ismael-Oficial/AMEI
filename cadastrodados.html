@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pagina de Cadastro</title>
+  <link rel="icon" type="image/x-icon" href="LOGO__1 SemFunddo.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/stylecadastro.css">
+
+</head>
+
+<body>
+  <div id="app" class="container"></div>
+
+  <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Formulario({ botao, eventoTeclado, cadastrar, obj, cancelar, remover, alterar }) {
+
+      return (
+        <form class="form">
+          <div class="furmule">
+            <div class="cadastrar">Cadastre-se</div>
+
+            <input type="hidden" value={obj.id_dados_usuario} onChange={eventoTeclado} name="id_dados_usuario" id="id_dados_usuario" placeholder="Digite o id" class="form-control"/>
+            <div class="nome">
+              <input type="name" value={obj.nome_completo} onChange={eventoTeclado} name="nome_completo" placeholder="Digite seu nome completo" class="form-control"/>
+            </div>
+
+            <div class="data">
+              <input type="date" value={obj.data_nascimento} onChange={eventoTeclado} name="data_nascimento" placeholder="Digite sua data de nascimento" class="form-control" />
+            </div>
+
+            <div class="numero">
+              <input type="number" value={obj.cnpj} onChange={eventoTeclado} name="cnpj" placeholder="Digite seu CNPJ" class="form-control" />
+            </div>
+
+            <div class="numero">
+              <input type="number" value={obj.celular} onChange={eventoTeclado} name="celular" placeholder="Digite seu Celular" class="form-control" />
+            </div>
+
+            <div class="emaio">
+              <input type="email" value={obj.email} onChange={eventoTeclado} name="email" placeholder="Digite seu Email" class="form-control" />
+
+            </div>
+
+            <div class="texto" >
+
+              <input type="text" value={obj.logradouro} onChange={eventoTeclado} name="logradouro" placeholder="Digite seu endereço" class="form-control" />
+            </div>
+
+            <div class="texto">
+              <input type="text" value={obj.cep} onChange={eventoTeclado} name="cep" placeholder="Digite seu CEP" class="form-control" />
+            </div>
+
+            <div class="texto">
+              <input type="text" value={obj.cidade} onChange={eventoTeclado} name="cidade" placeholder="Digite o nome da sua Cidade" class="form-control" />
+            </div>
+
+            <div class="texto">
+              <input type="text" value={obj.uf} onChange={eventoTeclado} name="uf" placeholder="Digite nome do seu estado" class="form-control"/>
+            </div>
+
+            <input type="button" value="Cadastrar" onClick={cadastrar} class="btn-primary" />
+          </div>
+        </form>
+      );
+    }
+
+
+    function Tabela({ vetor, selecionar }) {
+    }
+
+    function App() {
+
+      var queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      var id = urlParams.get("id");
+      //document.getElementById("id_dados_usuario").value = y;
+
+      const usuario1 = {
+        id_dados_usuario: id,
+        nome_completo: "",
+        data_nascimento: "",
+        cnpj: "",
+        rg: "",
+        celular: "",
+        email: "",
+        bairro: "",
+        cep: "",
+        cidade: "",
+        uf: "",
+        complemento: "",
+        logradouro: "",
+        numero: ""
+      }
+        ;
+
+      const [btnCadastrar, setBtnCadastrar] = React.useState(true);
+      const [usuarios, setUsuarios] = React.useState([]);
+      const [objUsuario, setObjUsuario] = React.useState(usuario1);
+
+      React.useEffect(() => {
+        fetch("http://localhost:8080/dados/listar")
+          .then(retorno => retorno.json())
+          .then(retorno_convertido => setUsuarios(retorno_convertido));
+      }, []);
+
+      const aoDigitar = (e) => {
+        setObjUsuario({ ...objUsuario, [e.target.name]: e.target.value });
+      };
+
+      const cadastrar = () => {
+        fetch('http://localhost:8080/dados/cadastrar', {
+          method: 'post',
+          body: JSON.stringify(objUsuario),
+          headers: {
+            'Content-type': 'application/json',
+            'Accept': 'application/json'
+          }
+        })
+          .then(retorno => retorno.json())
+          .then(retorno_convertido => {
+            if (retorno_convertido.mensagem !== undefined) {
+              alert(retorno_convertido.mensagem);
+            } else {
+              setUsuarios([...usuarios, retorno_convertido]);
+              alert('Usuário cadastrado com sucesso');
+              limparFormulario();
+              var pegarId = retorno_convertido.id_dados_usuario;
+              window.location.href = "login.html?id=" + pegarId;
+            };
+          });
+      };
+
+
+      const limparFormulario = () => {
+        setObjUsuario(usuario1);
+        setBtnCadastrar(true);
+      };
+
+
+
+      return (
+        <div class="App">
+          <Formulario
+            botao={btnCadastrar}
+            eventoTeclado={aoDigitar}
+            cadastrar={cadastrar}
+            obj={objUsuario}
+            cancelar={limparFormulario}
+          />
+          <Tabela vetor={usuarios} />
+        </div>
+      );
+    }
+
+    ReactDOM.render(<App />, document.getElementById("app"));
+
+
+  </script>
+</body>
+
+</html>

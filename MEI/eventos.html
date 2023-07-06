@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorias | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="../styles/MEI.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="nav">
+                <a href="ferramentas.html">
+                    <p>Ferramentas</p>
+                </a>
+                <a href="ferramentas.html"><img src="../imgs/ferramentas.png" alt="ícone Ferramentas"></a>
+                <a href="treinamentos.html">
+                    <p>Treinamentos</p>
+                </a>
+                <a href="treinamentos.html"><img src="../imgs/treinamento-on-line.png" alt="ícone Treinamentos"></a>
+                <a href="mentorias.html">
+                    <p>Mentorias</p>
+                </a>
+                <a href="mentorias.html"><img src="../imgs/professor-no-quadro.png" alt="ícone Mentorias"></a>
+                <a href="eventos.html">
+                    <p>Eventos</p>
+                </a>
+                <a href="eventos.html"><img src="../imgs/calendario.png" alt="ícone Eventos"></a>
+                <a href="#" onclick="Alerta()">
+                    <p>Notificações</p>
+                </a>
+                <a href="#"><img src="../imgs/botao-ativar-notificacoes.png" alt="ícone Notificações"></a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../imgs/perfil.jpeg" alt="Imagem de Usuario">
+                <p>Usuário</p>
+                <img src="../imgs/question.png" alt="ícone">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="main-eventos">
+            <div class="eventos">
+                <div class="formbold-main-wrapper">
+                    <div class="formbold-form-wrapper">
+                        <form action="https://formbold.com/s/FORM_ID" method="POST">
+                            <h2 class="formbold-form-title">Registrar Evento</h2>
+
+                            <div class="formbold-input-flex">
+                                <div>
+                                    <label for="firstname" class="formbold-form-label">
+                                        Primeiro Nome
+                                    </label>
+                                    <input type="text" name="firstname" id="firstname" class="formbold-form-input" />
+                                </div>
+                                <div>
+                                    <label for="lastname" class="formbold-form-label"> último Nome </label>
+                                    <input type="text" name="lastname" id="lastname" class="formbold-form-input" />
+                                </div>
+                            </div>
+
+                            <div class="formbold-input-flex">
+                                <div>
+                                    <label for="email" class="formbold-form-label"> Email </label>
+                                    <input type="email" name="email" id="email" class="formbold-form-input" />
+                                </div>
+                                <div>
+                                    <label for="phone" class="formbold-form-label"> Telefone/Celular </label>
+                                    <input type="text" name="phone" id="phone" class="formbold-form-input" />
+                                </div>
+                            </div>
+
+                            <div class="formbold-input-flex">
+                                <div>
+                                    <label for="jobtitle" class="formbold-form-label"> Nome do Evento </label>
+                                    <input type="text" name="jobtitle" id="jobtitle" class="formbold-form-input" />
+                                </div>
+                                <div>
+                                    <label for="company" class="formbold-form-label"> Compania </label>
+                                    <input type="text" name="company" id="company" class="formbold-form-input" />
+                                </div>
+                            </div>
+
+                            <div class="formbold-input-flex">
+                                <div>
+                                    <label for="state" class="formbold-form-label"> Estado </label>
+                                    <input type="text" name="state" id="state" class="formbold-form-input" />
+                                </div>
+                                <div>
+                                    <label for="country" class="formbold-form-label"> Cidade </label>
+                                    <input type="text" name="country" id="country" class="formbold-form-input" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="postcode" class="formbold-form-label"> Endereço </label>
+                                <input type="text" name="postcode" id="postcode" class="formbold-form-input" />
+                            </div>
+
+                            <p class="formbold-policy">
+                                Ao preencher este formulário e clicar em enviar, você reconhece nossa
+                                <a href="#">política de privacidade.</a>
+                            </p>
+                            <button class="formbold-btn">Submit Event Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="logout">
+            <a href="perfil.html">Perfil</a>
+            <a href="../index.html">Log Out</a>
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+
+    <script>
+        function FluxoCaixa() {
+            var acesso1 = document.getElementById('acesso');
+            acesso = location.href = "../Ferramentas/FluxoCaixa.html"
+        }
+
+        function CalculadoraLucro() {
+            var acesso2 = document.getElementById('acesso');
+            acesso = location.href = "../CalculadoraLucro/CalculadoraLucro.html"
+        }
+    </script>
+</body>
+
+</html>

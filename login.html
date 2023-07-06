@@ -2,52 +2,147 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | AMEI</title>
-    <link rel="icon" type="image/x-icon" href="imgs/logo.png">
-    <!-- Estilo CSS -->
-    <link rel="stylesheet" href="styles/style.css">
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AMEI</title>
+  <link rel="icon" type="image/x-icon" href="imgs/logo.png">
+  <!-- Estilo CSS -->
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-login">
-        <form>
-            <div class="logo">
-                <img src="imgs/Usuario.png">
-                <h2>Login</h2>
-            </div>
+  <div class="container-login">
+    <form id="loginForm">
+      <div class="logo">
+        <img src="imgs/Usuario.png">
+        <h2>Login</h2>
+      </div>
 
-            <div class="login-input">
-                <input type="text" placeholder="Usuario" id="login" required>
-            </div>
+      <div class="login-input">
+        <input type="text" placeholder="Usuário" id="username" required>
+      </div>
 
-            <div class="login-input">
-                <input type="password" placeholder="Senha" id="senha" required>
-            </div>
+      <div class="login-input">
+        <input type="password" placeholder="Senha" id="password" required>
+      </div>
 
-            <div class="login-input">
-                <input type="checkbox">
-                <p>Lembre de mim</p>
-                <a href="reset-senha-email.html">Esqueceu a senha?</a>
-            </div>
+      <div class="login-input">
+        <input type="checkbox">
+        <p>Lembre de mim</p>
+        <a href="reset-senha-email.html">Esqueceu a senha?</a>
+      </div>
 
-            <div class="login-input">
-                <input type="submit" value="Entrar" onclick="logar(); return false">
-            </div>
+      <div class="login-input">
+        <input type="submit" value="Entrar">
+      </div>
 
-            <div class="login-input">
-                <input type="button" id="BtnRegister" value="Registrar" onclick="RegisterClick()">
-            </div>
-        </form>
-    </div>
+      <div class="login-input">
+        <input type="button" id="BtnRegister" value="Registrar" onclick="RegisterClick()">
+      </div>
+    </form>
+  </div>
 
-    <script src="script.js"></script>
+  <script>
+
+    var queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    var id = urlParams.get("id");
+
+    const usuario = {
+      id_login: id
+    };
+
+    function RegisterClick() {
+      var BtnRegister = document.getElementById('BtnRegister');
+      BtnRegister = location.href = "cadastrologin.html"
+    }
+
+    function logar() {
+
+      var login = document.getElementById('login').value;
+      var senha = document.getElementById('senha').value;
+
+      if (login == "admin" && senha == "admin") {
+        alert('Sucesso');
+        location.href = "MEI/ferramentas.html";
+      }
+      else if (login == "admin2" && senha == "admin2") {
+        alert('Sucesso');
+        location.href = "MEI/consultas.html";
+      }
+      else {
+        alert('Usuario ou senha incorretos');
+      }
+    }
+
+    /*var button = document.getElementById('perfil');
+    
+    button.addEventListener("click", function () {
+    
+        var info = document.getElementById('logout');
+    
+        if (info.style.display === "block") {
+            info.style.display = "none"
+        }
+        else {
+            info.style.display = "block"
+        }
+    })*/
+
+    function Alerta() {
+      alert("Desculpe! Está parte ainda em produção!")
+    }
+
+    function CursoEmpreender() {
+      var CursoUm = document.getElementById('CursoUm')
+      CursoUm = location.href = "../Empreendedorismo/index.html"
+    }
+
+    function CursoMarketing() {
+      var CursoDois = document.getElementById('CursoUm')
+      CursoDois = location.href = "../Marketing-Digital/index.html"
+    }
+
+    function CursoGestao() {
+      var CursoTres = document.getElementById('CursoUm')
+      CursoTres = location.href = "../Gestao-Financeira/index.html"
+    }
+
+    // Função para fazer a comparação dos dados
+    function compararDados() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Obtém o usuário e senha salvos no localStorage
+      var savedUsername = localStorage.getItem('username');
+      var savedPassword = localStorage.getItem('password');
+
+      if (username === savedUsername && password === savedPassword) {
+        var pegarId = id;
+        window.location.href = "MEI/ferramentas.html?id=" + pegarId;
+      } else {
+        alert('Usuário e senha incorretos!');
+      }
+
+      // Limpa os campos do formulário
+      document.getElementById('username').value = '';
+      document.getElementById('password').value = '';
+    }
+
+    // Adiciona o listener ao botão de login
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Previne o envio do formulário
+      compararDados();
+
+    });
+  </script>
+
 </body>
 
 </html>

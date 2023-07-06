@@ -9,7 +9,7 @@ body {
     font-family: verdana;
 }
 
-main{
+main {
     width: 80%;
     height: 100vh;
     float: left;
@@ -27,7 +27,7 @@ main{
     transition: 1s;
 }
 
-.container:hover{
+.container:hover {
     margin-top: -10px;
     box-shadow: 8px 10px 0px #F27405;
     transition: 1s;
@@ -121,4 +121,39 @@ button:hover {
     text-align: center;
     font-size: 19pt;
     margin: 0.5rem;
+}
+
+@media only screen and (max-width: 850px) {
+    .container {
+        background: linear-gradient(135deg, #1F2226, #474F59);
+        border-radius: 0px;
+        width: 400px;
+        height: 100vh;
+        color: #FFF;
+    }
+
+    .container:hover {
+        margin-top: 0px;
+        box-shadow: 0px 0px 0px #F27405;
+    }
+
+    #resultado1 {
+        font-size: 18pt;
+        margin: 1rem;
+    }
+    
+    #resultado2 {
+        font-size: 16pt;
+        margin: 1rem;
+    }
+    
+    #resultado3 {
+        font-size: 14pt;
+        margin: 1rem;
+    }
+    
+    #resultado4 {
+        font-size: 14pt;
+        margin: 1rem;
+    }
 }

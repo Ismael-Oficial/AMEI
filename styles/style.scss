@@ -15,7 +15,7 @@ $alternative-color: #fd8720;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
 
@@ -412,7 +412,7 @@ section {
                 @include FlexCenter();
                 height: 60px;
                 font-size: 26px;
-                opacity: 0.3;
+                opacity: 0.5;
             }
 
             input[type=email] {
@@ -449,7 +449,7 @@ section {
             @include FlexCenter();
             height: 60px;
             font-size: 26px;
-            opacity: 0.3;
+            opacity: 0.5;
         }
     }
 }

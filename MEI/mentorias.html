@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorias | AMEI</title>
+    <link rel="icon" type="image/x-icon" href="../imgs/logo.png">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="../styles/MEI.css">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header>
+        <div class="sidebar">
+            <div class="logo">
+                <img src="../imgs/logo.png" alt="Logo do Projeto">
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar">
+            </div>
+            <div class="nav">
+                <a href="ferramentas.html">
+                    <p>Ferramentas</p>
+                </a>
+                <a href="ferramentas.html"><img src="../imgs/ferramentas.png" alt="ícone Ferramentas"></a>
+                <a href="treinamentos.html">
+                    <p>Treinamentos</p>
+                </a>
+                <a href="treinamentos.html"><img src="../imgs/treinamento-on-line.png" alt="ícone Treinamentos"></a>
+                <a href="mentorias.html">
+                    <p>Mentorias</p>
+                </a>
+                <a href="mentorias.html"><img src="../imgs/professor-no-quadro.png" alt="ícone Mentorias"></a>
+                <a href="eventos.html">
+                    <p>Eventos</p>
+                </a>
+                <a href="eventos.html"><img src="../imgs/calendario.png" alt="ícone Eventos"></a>
+                <a href="#" onclick="Alerta()">
+                    <p>Notificações</p>
+                </a>
+                <a href="#"><img src="../imgs/botao-ativar-notificacoes.png" alt="ícone Notificações"></a>
+            </div>
+            <div class="perfil" id="perfil">
+                <img src="../imgs/perfil.jpeg" alt="Imagem de Usuario">
+                <p>Usuário</p>
+                <img src="../imgs/question.png" alt="ícone">
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="main-mentorias">
+            <div class="container">
+                <div class="calendar">
+                    <div class="front">
+                        <div class="current-date">
+                            <h1>Quarta-Feira, 05</h1>
+                            <h1>Julho de 2023</h1>
+                        </div>
+
+                        <div class="current-month">
+                            <ul class="week-days">
+                                <li>SEG</li>
+                                <li>TER</li>
+                                <li>QUA</li>
+                                <li>QUI</li>
+                                <li>SEX</li>
+                                <li>SAB</li>
+                                <li>DOM</li>
+                            </ul>
+
+                            <div class="weeks">
+                                <div class="first">
+                                    <span class="last-month">28</span>
+                                    <span class="last-month">29</span>
+                                    <span class="last-month">30</span>
+                                    <span class="last-month">31</span>
+                                    <span>01</span>
+                                    <span>02</span>
+                                    <span>03</span>
+                                </div>
+
+                                <div class="second">
+                                    <span>04</span>
+                                    <span>05</span>
+                                    <span class="event">06</span>
+                                    <span>07</span>
+                                    <span>08</span>
+                                    <span>09</span>
+                                    <span>10</span>
+                                </div>
+
+                                <div class="third">
+                                    <span>11</span>
+                                    <span>12</span>
+                                    <span>13</span>
+                                    <span>14</span>
+                                    <span class="active">15</span>
+                                    <span>16</span>
+                                    <span>17</span>
+                                </div>
+
+                                <div class="fourth">
+                                    <span>18</span>
+                                    <span>19</span>
+                                    <span>20</span>
+                                    <span>21</span>
+                                    <span>22</span>
+                                    <span>23</span>
+                                    <span>24</span>
+                                </div>
+
+                                <div class="fifth">
+                                    <span>25</span>
+                                    <span>26</span>
+                                    <span>27</span>
+                                    <span>28</span>
+                                    <span>29</span>
+                                    <span>30</span>
+                                    <span>31</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="back">
+                        <input placeholder="What's the event?">
+                        <div class="info">
+                            <div class="date">
+                                <p class="info-date">
+                                    Data: <span>Jan 15th, 2023</span>
+                                </p>
+                                <p class="info-time">
+                                    Horario: <span>6:35 PM</span>
+                                </p>
+                            </div>
+                            <div class="address">
+                                <p>
+                                    Endereço: <span>129 W 81st St, New York, NY</span>
+                                </p>
+                            </div>
+                            <div class="observations">
+                                <p>
+                                    Observação: <span>Be there 15 minutes earlier</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button class="save">
+                                Salvar <i class="ion-checkmark"></i>
+                            </button>
+                            <button class="dismiss">
+                                Cancelar <i class="ion-android-close"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="logout">
+            <a href="perfil.html">Perfil</a>
+            <a href="../index.html">Log Out</a>
+        </div>
+    </section>
+
+    <script src="../script.js"></script>
+
+    <script>
+        function FluxoCaixa() {
+            var acesso1 = document.getElementById('acesso');
+            acesso = location.href = "../Ferramentas/FluxoCaixa.html"
+        }
+
+        function CalculadoraLucro() {
+            var acesso2 = document.getElementById('acesso');
+            acesso = location.href = "../CalculadoraLucro/CalculadoraLucro.html"
+        }
+    </script>
+</body>
+
+</html>
